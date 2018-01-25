@@ -1,0 +1,83 @@
+/* 
+=======================================
+Flex-Container - Container 1 Example: 
+=======================================
+*/
+
+/* Give all div items within the containers a border i.e. all flex-items will have a border for visual domonstration purposes. */
+.container-1 div, .container-2 div, .container-3 div{
+    border:1px #ccc solid;
+    padding:10px;
+}
+
+/* We added a media query for when the browser reaches a minimum of 468px. 
+The display: flex; property makes the items within container 1 sit side-by-side without the need of floats within 1 line of code. 
+When the browser reaches below 468px the items will sit ontop of one another. This will make the webpages more dynamic to accomodate mobile devices. */
+@media(min-width:468px){
+    .container-1{
+        display:flex;
+
+        /* align-items:stretch; */        /* The default. */
+        /* align-items:flex-start; */     /*Align left/Top. */
+        /* align-items:flex-end; */       /* Align Right/Bottom. */
+        /* align-items:center; */         /* Align Center. */
+
+        /* flex-direction:column; */      /* Aligns items vertically in columns, rows will align horizontally. */
+    }
+}
+
+/* Flex-items within flex-container-1. The flex property allows us to assign the growth/shrink factor of a flex-item i.e how much space should an item take. 
+The Order property as he name would suggest allows us to order elements on the webpage without the need to adjust the HTML file. In the example below we made box-1 sit in the middle while box-2 sits on the left of box-1 and box-3 sits on the right of box-1. */
+.box-1{
+    flex:2;
+    order:2;
+  }
+  
+  .box-2{
+    flex:1;
+    order:1;
+  }
+  
+  .box-3{
+    flex:1;
+    order: 3;
+  }
+
+/* 
+=======================================
+Flex-Container - Container 2 Example: 
+=======================================
+*/
+
+.container-2{
+    display:flex;  
+
+    /* justify-content:flex-start; */       /* The default, justifies flex-items to the left. */
+    /* justify-content:flex-end; */         /* Justifies flex-items to the right. */
+    /* justify-content:center; */           /* Justifies flex-items to the center. */
+
+    justify-content:space-between;          /* Adds equal margin/space between the flex-items. */
+    /* justify-content:space-around; */     /* Same as above but adds space and the beginning and end. */
+}
+
+/* We could use width to asign the width of flex-items however, flex-basis allows for more flexibility/dynamism and is the flexbox way of assigning the width. */ 
+.container-2-box{
+    /* width: 27%; */
+    flex-basis: 27%;
+}
+
+/* 
+=======================================
+Flex-Container - Container 3 Example: 
+=======================================
+*/
+
+.container-3{
+    display:flex;  
+    flex-wrap:wrap;                     /* Wraps the flex-items. */
+    justify-content:space-between;      /* Adds equal margin/space between the flex-items. */
+}
+
+.container-3-box{
+    flex-basis:12%;                     /* flexbox way of assigning width property to elements. */
+}
